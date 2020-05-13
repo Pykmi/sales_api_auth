@@ -1,0 +1,294 @@
+{
+  "id": "25cd2712-f7b6-4718-b775-306a852fd138",
+  "name": "HSL Sales API",
+  "description": "",
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "d3217b43-c060-4be5-a605-3ce2c6980c46"
+      }
+    ]
+  },
+  "events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "d7a88cf4-0a65-4e5e-96f9-08cb15a1507a",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "06342392-1aaa-4f63-8f1e-9bbe6cfce7d6",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variables": [
+    {
+      "key": "API_URL",
+      "value": "https://sales-api.hsl.fi/api/sandbox/ticket/v4",
+      "disabled": false
+    }
+  ],
+  "order": [
+    "4764e364-66cb-4f5f-a420-e76235c892ab",
+    "1d649686-c646-4e29-aaef-1832d1970e7a",
+    "44b63824-5a76-45c0-a268-6753045bbfcb",
+    "b82144dd-a8e3-47f5-891d-bf74136a4b22",
+    "c6123b70-84de-46bb-8b91-550069f2f87a"
+  ],
+  "folders_order": [
+
+  ],
+  "protocolProfileBehavior": [
+
+  ],
+  "folders": [
+
+  ],
+  "requests": [
+    {
+      "id": "1d649686-c646-4e29-aaef-1832d1970e7a",
+      "name": "Order Zone Extension",
+      "url": "{{API_URL}}/order",
+      "description": "",
+      "data": [
+
+      ],
+      "dataOptions": {
+        "raw": {
+          "language": "json"
+        }
+      },
+      "dataMode": "raw",
+      "headerData": [
+        {
+          "key": "Content-Type",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": "",
+          "type": "text"
+        }
+      ],
+      "method": "POST",
+      "pathVariableData": [
+
+      ],
+      "queryParams": [
+
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "25cd2712-f7b6-4718-b775-306a852fd138",
+      "rawModeData": "{\n\t\"userId\": \"e48c2c7f9dc348cd2cc5081517ddf128f5c31b4bbc8723d7dbac47a27b99043473c2205d8be9899aafe8e12901f9fae9667cb3d92a186f9937076934140829a4\",\n\t\"phoneNumber\": \"+358442815575\",\n\t\"ticketTypeId\": \"season\",\n\t\"customerTypeId\": \"adult\",\n\t\"zones\": \"AB\"\n}",
+      "headers": "Content-Type: application/json\n",
+      "pathVariables": [
+
+      ]
+    },
+    {
+      "id": "44b63824-5a76-45c0-a268-6753045bbfcb",
+      "name": "Render Ticket",
+      "url": "{{API_URL}}/render?userId=e48c2c7f9dc348cd2cc5081517ddf128f5c31b4bbc8723d7dbac47a27b99043473c2205d8be9899aafe8e12901f9fae9667cb3d92a186f9937076934140829a4&ticketId=MhFmQFbOrSgbyxDZh2Zq8x3KiTOIZisgvTUsnXMWTHIIQ4CR9xBzS89noTqXLz6x&deviceId=tba&locale=fi",
+      "description": "",
+      "data": [
+
+      ],
+      "dataOptions": {
+        "raw": {
+          "language": "json"
+        }
+      },
+      "dataMode": "raw",
+      "headerData": [
+        {
+          "key": "Content-Type",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": "",
+          "type": "text"
+        }
+      ],
+      "method": "GET",
+      "pathVariableData": [
+
+      ],
+      "queryParams": [
+        {
+          "key": "userId",
+          "value": "e48c2c7f9dc348cd2cc5081517ddf128f5c31b4bbc8723d7dbac47a27b99043473c2205d8be9899aafe8e12901f9fae9667cb3d92a186f9937076934140829a4",
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "ticketId",
+          "value": "MhFmQFbOrSgbyxDZh2Zq8x3KiTOIZisgvTUsnXMWTHIIQ4CR9xBzS89noTqXLz6x",
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "deviceId",
+          "value": "tba",
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "locale",
+          "value": "fi",
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "25cd2712-f7b6-4718-b775-306a852fd138",
+      "rawModeData": "{\n\t\"userId\": \"e48c2c7f9dc348cd2cc5081517ddf128f5c31b4bbc8723d7dbac47a27b99043473c2205d8be9899aafe8e12901f9fae9667cb3d92a186f9937076934140829a4\",\n\t\"phoneNumber\": \"+358442815575\",\n\t\"ticketTypeId\": \"season\",\n\t\"customerTypeId\": \"adult\",\n\t\"zones\": \"AB\"\n}",
+      "headers": "Content-Type: application/json\n",
+      "pathVariables": [
+
+      ]
+    },
+    {
+      "id": "4764e364-66cb-4f5f-a420-e76235c892ab",
+      "name": "Get SeasonTicketEligibility",
+      "url": "{{API_URL}}/get/seasonTicketEligibility?userId=e48c2c7f9dc348cd2cc5081517ddf128f5c31b4bbc8723d7dbac47a27b99043473c2205d8be9899aafe8e12901f9fae9667cb3d92a186f9937076934140829a4",
+      "description": "",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": [
+
+      ],
+      "method": "GET",
+      "pathVariableData": [
+
+      ],
+      "queryParams": [
+        {
+          "key": "userId",
+          "value": "e48c2c7f9dc348cd2cc5081517ddf128f5c31b4bbc8723d7dbac47a27b99043473c2205d8be9899aafe8e12901f9fae9667cb3d92a186f9937076934140829a4",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "25cd2712-f7b6-4718-b775-306a852fd138",
+      "headers": "",
+      "pathVariables": [
+
+      ]
+    },
+    {
+      "id": "b82144dd-a8e3-47f5-891d-bf74136a4b22",
+      "name": "Confirm Ticket",
+      "url": "{{API_URL}}/confirm",
+      "description": "",
+      "data": [
+
+      ],
+      "dataOptions": {
+        "raw": {
+          "language": "json"
+        }
+      },
+      "dataMode": "raw",
+      "headerData": [
+        {
+          "key": "Content-Type",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": "",
+          "type": "text"
+        }
+      ],
+      "method": "PUT",
+      "pathVariableData": [
+
+      ],
+      "queryParams": [
+
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "25cd2712-f7b6-4718-b775-306a852fd138",
+      "rawModeData": "{\n\t\"ticketId\": \"MhFmQFbOrSgbyxDZh2Zq8x3KiTOIZisgvTUsnXMWTHIIQ4CR9xBzS89noTqXLz6x\",\n\t\"deviceId\": \"tba\"\n}",
+      "headers": "Content-Type: application/json\n",
+      "pathVariables": [
+
+      ]
+    },
+    {
+      "id": "c6123b70-84de-46bb-8b91-550069f2f87a",
+      "name": "Order Zone Extension",
+      "url": "{{API_URL}}/extension/order",
+      "description": "",
+      "data": [
+
+      ],
+      "dataOptions": {
+        "raw": {
+          "language": "json"
+        }
+      },
+      "dataMode": "raw",
+      "headerData": [
+        {
+          "description": "",
+          "key": "Content-Type",
+          "name": "Content-Type",
+          "type": "text",
+          "value": "application/json"
+        }
+      ],
+      "method": "POST",
+      "pathVariableData": [
+
+      ],
+      "queryParams": [
+
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "25cd2712-f7b6-4718-b775-306a852fd138",
+      "rawModeData": "{\n\t\"seasonTicketId\": \"MhFmQFbOrSgbyxDZh2Zq8x3KiTOIZisgvTUsnXMWTHIIQ4CR9xBzS89noTqXLz6x\",\n\t\"zones\": \"C\"\n}",
+      "headers": "Content-Type: application/json\n",
+      "pathVariables": [
+
+      ]
+    }
+  ]
+}
